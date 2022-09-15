@@ -1,4 +1,62 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿function VerInfoSerie(id)
+{
+    $.ajax(
+        {
+            type:'POST',
+            datatype:'JSON',
+            url:'/Home/VerInfoSerie',
+            data: { IdSerie : id },
 
-// Write your JavaScript code.
+            success : function(response)
+            {
+                $("#Titulo").html(response.nombre);
+                $("#Imagen").attr("src",response.imagenSerie);
+                $("#Numero").html(response.añoCreacion);
+                $("#Sinopsis").html(response.sinopsis);
+            }
+        }
+    )
+}
+
+function VerActores(id)
+{
+    $.ajax(
+        {
+            type:'POST',
+            datatype:'JSON',
+            url:'/Home/VerActores',
+            data: { IdSerie : id },
+
+            success : function(response)
+            {
+                let a="";
+                response.forEach(element=> {
+                    a += element + "</br>";
+                });
+                $("#Texto").html(a);
+            }
+        }
+    )
+}
+
+function VerTemporadas(id)
+{
+    $.ajax(
+        {
+            type:'POST',
+            datatype:'JSON',
+            url:'/Home/VerTemporadas',
+            data: { IdSerie : id },
+
+            success : function(response)
+            {
+                response.forEach(function(temporada)
+                {
+                    console.log(temporada);
+                });
+                $("#Numero").html(temporada.numeroTemporada)
+                $("#Texto").html(temporada.tituloTemporada);
+            }
+        }
+    )
+}
