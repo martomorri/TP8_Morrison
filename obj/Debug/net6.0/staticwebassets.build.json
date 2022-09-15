@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "dJ3ElU5MyBdHuKRNrF5anGapy0rD4WQg5+qKygEn/Uo=",
+  "Hash": "Mw1dNHFtoxHPZY5S14im7DUxhqh+5CPab/MIcc43uNg=",
   "Source": "TP8_Morrison",
   "BasePath": "_content/TP8_Morrison",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\46873102\\Desktop\\TP8_Morrison\\wwwroot\\img\\logo.png",
+      "SourceId": "TP8_Morrison",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\46873102\\Desktop\\TP8_Morrison\\wwwroot\\",
+      "BasePath": "_content/TP8_Morrison",
+      "RelativePath": "img/logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\logo.png"
     },
     {
       "Identity": "C:\\Users\\46873102\\Desktop\\TP8_Morrison\\wwwroot\\js\\site.js",

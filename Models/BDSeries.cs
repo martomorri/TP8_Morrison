@@ -9,13 +9,21 @@ namespace TP8_Morrison.Models;
 
 public static class BDSeries
 {
-    private static string _connectionString = @"Server=A-PHZ2-CIDI-035; DataBase=BDSeries; Trusted_Connection=true;";
+    private static string _connectionString = @"Server=A-PHZ2-CIDI-014; DataBase=BDSeries; Trusted_Connection=true;";
     public static List<Serie> ListarSeries()
     {
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
             string sp = "ListarSeries";
             return db.Query<Serie>(sp, commandType: CommandType.StoredProcedure).ToList();
+        }
+    }
+    public static Serie ListarSerieXID(int IdSerie)
+    {
+        using (SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sp = "ListarSerieXID";
+            return db.QueryFirstOrDefault<Serie>(sp, new { @IdSerie = IdSerie }, commandType: CommandType.StoredProcedure);
         }
     }
     public static List<string> ListarActores(int IdSerie)

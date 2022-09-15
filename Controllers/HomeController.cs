@@ -18,15 +18,17 @@ public class HomeController : Controller
         ViewBag.ListaSeries = BDSeries.ListarSeries();
         return View();
     }
+    public Serie VerInfoSerie(int IdSerie)
+    {
+        return BDSeries.ListarSerieXID(IdSerie);
+    }
     public List<string> VerActores(int IdSerie)
     {
-        List<string> ListaActores = BDSeries.ListarActores(IdSerie);
-        return ListaActores;
+        return BDSeries.ListarActores(IdSerie);
     }
     public List<Temporada> VerTemporadas(int IdSerie)
     {
-        List<Temporada> ListaTemporadas = BDSeries.ListarTemporadas(IdSerie);
-        return ListaTemporadas;
+        return BDSeries.ListarTemporadas(IdSerie);
     }
 
     public IActionResult Privacy()

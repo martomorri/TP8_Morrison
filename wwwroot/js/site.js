@@ -11,8 +11,7 @@
             {
                 $("#Titulo").html(response.nombre);
                 $("#Imagen").attr("src",response.imagenSerie);
-                $("#Numero").html(response.añoCreacion);
-                $("#Sinopsis").html(response.sinopsis);
+                $("#Texto").html("<p></p>Año de inicio: " + response.añoInicio + "</br><p></p>Sinopsis: " + response.sinopsis);
             }
         }
     )
@@ -29,10 +28,12 @@ function VerActores(id)
 
             success : function(response)
             {
-                let a="";
-                response.forEach(element=> {
-                    a += element + "</br>";
+                let a = "";
+                response.forEach(actor => {
+                    a += actor + "</br>";
                 });
+                $("#Titulo").html("Elenco");
+                $("#Imagen").attr("src","");
                 $("#Texto").html(a);
             }
         }
@@ -50,12 +51,13 @@ function VerTemporadas(id)
 
             success : function(response)
             {
-                response.forEach(function(temporada)
-                {
-                    console.log(temporada);
+                let t = "";
+                response.forEach(actor => {
+                    t += actor.numeroTemporada + " " + actor.tituloTemporada + "</br>";
                 });
-                $("#Numero").html(temporada.numeroTemporada)
-                $("#Texto").html(temporada.tituloTemporada);
+                $("#Titulo").html("Temporadas");
+                $("#Imagen").attr("src","");
+                $("#Texto").html(t);
             }
         }
     )
