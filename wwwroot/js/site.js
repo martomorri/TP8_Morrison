@@ -1,4 +1,4 @@
-﻿function VerInfoSerie(id)
+﻿function VerInfoSerie(id, nombre)
 {
     $.ajax(
         {
@@ -9,7 +9,7 @@
 
             success : function(response)
             {
-                $("#Titulo").html(response.nombre);
+                $("#Titulo").html(nombre);
                 $("#Imagen").attr("src",response.imagenSerie);
                 $("#Texto").html("<p></p>Año de inicio: " + response.añoInicio + "</br><p></p>Sinopsis: " + response.sinopsis);
             }
@@ -17,7 +17,7 @@
     )
 }
 
-function VerActores(id)
+function VerActores(id, nombre)
 {
     $.ajax(
         {
@@ -32,7 +32,7 @@ function VerActores(id)
                 response.forEach(actor => {
                     a += actor + "</br>";
                 });
-                $("#Titulo").html("Elenco");
+                $("#Titulo").html(nombre);
                 $("#Imagen").attr("src","");
                 $("#Texto").html(a);
             }
@@ -40,7 +40,7 @@ function VerActores(id)
     )
 }
 
-function VerTemporadas(id)
+function VerTemporadas(id, nombre)
 {
     $.ajax(
         {
@@ -55,7 +55,7 @@ function VerTemporadas(id)
                 response.forEach(actor => {
                     t += actor.numeroTemporada + " " + actor.tituloTemporada + "</br>";
                 });
-                $("#Titulo").html("Temporadas");
+                $("#Titulo").html(nombre);
                 $("#Imagen").attr("src","");
                 $("#Texto").html(t);
             }

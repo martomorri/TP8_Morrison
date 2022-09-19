@@ -9,7 +9,7 @@ namespace TP8_Morrison.Models;
 
 public static class BDSeries
 {
-    private static string _connectionString = @"Server=A-PHZ2-CIDI-014; DataBase=BDSeries; Trusted_Connection=true;";
+    private static string _connectionString = @"Server=A-PHZ2-CIDI-017; DataBase=BDSeries; Trusted_Connection=true;";
     public static List<Serie> ListarSeries()
     {
         using (SqlConnection db = new SqlConnection(_connectionString))
